@@ -1,0 +1,36 @@
+package crm.empresacomercial.utils;
+
+import java.io.Serializable;
+
+import javax.persistence.Transient;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.springframework.data.domain.Persistable;
+
+public abstract class BaseEntity<ID extends Serializable> implements Persistable<ID> {
+
+	private static final long serialVersionUID = 201505091502L;
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj);
+	}
+
+	public abstract void setId(ID id);
+
+	@Override
+	@Transient
+	@JsonIgnore
+	public boolean isNew() {
+		return null == this.getId();
+	}
+
+}

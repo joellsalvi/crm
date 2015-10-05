@@ -1,0 +1,99 @@
+<!-- ## main start ## -->
+<div id="main">
+  <!-- ## content start ## -->
+  <div id="content">
+    <!-- ## content container start ## -->
+    <div class="container">
+      <!-- ## row ## -->
+      <div class="row">
+        <!-- ## primary content start ## -->
+        <div class="col-md-8 col-md-offset-2">
+            <!-- ## page start ## -->
+            <article class="page type-page status-publish hentry">
+                <section class="novoContato">
+                    <div class="content">
+                        <label for="login-username">{{acaoForm}} Contato</label>
+                        <hr>
+                        <form>
+                            <fieldset>
+                            	<label for="contato.nmContato" ng-class="class_contato_nmContato">Nome</label>
+                                <input placeholder="Nome" type="text" required="true" maxlength="100"
+                                        name="nmContato" class="form-control" ng-model="contato.nmContato">
+                                        
+                                <div class="row">
+	                                <div class="col-md-6">
+	                                    <label for="contato.email" ng-class="class_contato_email">Email</label>
+		                                <input placeholder="Email" type="text" required="true" maxlength="100"
+		                                        name="user_name" class="form-control" ng-model="contato.email">
+	                                </div>
+	                                <div class="col-md-6">
+	                                    <label for="contato.confirmarEmail" ng-class="class_contato_confirmarEmail">Confirmar Email</label>
+		                                <input placeholder="Confirmar Email" type="text" required="true" maxlength="100"
+		                                        name="user_name" class="form-control" ng-model="dadosAux.confirmarEmail">
+	                                </div>
+	                            </div>
+	                            
+                            	<label for="contato.telefone" ng-class="class_contato_telefone">Telefone</label>
+                                <input placeholder="Telefone" type="text" required="true" maxlength="13"
+                                        name="telefone" class="form-control onlyNumber" ng-model="contato.telefone">
+                                
+                                <hr>
+                                
+                                <div class="row">
+	                                <div class="col-md-6">
+		                            	<label for="contato.departamento" ng-class="class_contato_departamento">Departamento</label>
+		                            	<select name="departamento" class="form-control" ng-model="contato.departamento">
+		                                        <option value="">Selecione...</option>
+		                                        <option value="1">Comercial</option>
+		                                        <option value="2">Financeiro</option>
+		                                        <option value="3">Servi&ccedil;os</option>
+		                                        <option value="4">Ind&uacute;stria</option>
+		                                        <option value="5">Almoxarifado</option>
+		                                        <option value="6">Recursos Humanos</option>
+		                                        <option value="7">Fiscal</option>
+		                                        <option value="8">Cont&aacute;bil</option>
+		                                </select>
+                                	</div>
+	                                <div class="col-md-6">
+		                            	<label for="contato.cargo" ng-class="class_contato_cargo">Cargo</label>
+		                            	<select name="cargo" class="form-control" ng-model="contato.cargo">
+		                                        <option value="">Selecione...</option>
+		                                        <option value="1">Comprador</option>
+		                                        <option value="2">Vendedor</option>
+		                                        <option value="3">Auxiliar Administrativo</option>
+		                                        <option value="4">Gerente</option>
+		                                        <option value="5">Diretor</option>
+		                                </select>
+                                	</div>
+	                            </div>
+	                            
+                            </fieldset>
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="submit" ng-click="salvarNovoContato()"
+                                            class="btn btn-success btn-sm btn-block">Salvar</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary btn-sm btn-block"
+                                        ng-click="voltar()">Retornar</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+
+                </section>
+            </article>
+            <!-- ## page end ## -->
+        </div>
+        <!-- ## primary content end ## -->
+      </div>
+      <!-- ## row end ## -->
+    </div>
+    <!-- ## content container end ## -->
+  </div>
+  <!-- ## content end ## -->
+</div>
+<!-- ## main end ## -->

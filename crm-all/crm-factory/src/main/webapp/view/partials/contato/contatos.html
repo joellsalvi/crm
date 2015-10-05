@@ -1,0 +1,134 @@
+<!-- ## main start ## -->
+<div id="main">
+  <!-- ## content start ## -->
+  <div id="content">
+    <!-- ## content container start ## -->
+    <div class="container">
+      <!-- ## row ## -->
+      <div class="row">
+        <!-- ## primary content start ## -->
+        <div class="col-md-10 col-md-offset-1">
+            <!-- ## page start ## -->
+            <article class="page type-page status-publish hentry">
+                <section class="novoContato">
+                    <div class="content">
+                        <hr>
+                        
+                        <div class="row">
+							<div class="btn-group btn-margin left">
+								<button type="submit" class="btn btn-primary btn-cempx"
+									ng-click="direcionamento('novo', undefined)">
+									Novo Contato
+								</button>
+							</div>
+							<div class="btn-group btn-margin rigth">
+								<button type="submit" class="btn btn-success btn-cempx"
+									ng-click="voltarParaCliente()">
+									Voltar
+								</button>
+							</div>
+						</div>
+						
+						<hr>
+						
+						<div class="widget-box" ng-show="contatos.length > 0">
+							<div class="widget-header">
+								<h4 class="widget-title">Lista de Contatos</h4>
+							</div>
+							<div class="widget-body">
+								<div class="widget-main">
+									<div class="table-responsive responsive-full-screen"
+										id="botao-acao-responsivo">
+										<table ng-table="tableContatos"
+											class="table table-striped table-bordered table-hover">
+											<tr ng-repeat="contato in contatos">
+												<td data-title="'A&ccedil;&otilde;es'"
+													class="configuracaoGrid width-acoes-grid">
+													<div class="hidden-sm hidden-xs btn-group width-acoes-grid">
+														<a class="btn btn-xs btn-info"
+															ng-click="direcionamento('editar', contato)"
+															data-toggle="tooltip"
+															title="editar">
+															<i class="ace-icon fa fa-pencil bigger-120"></i>
+														</a>
+														<a class="btn btn-xs btn-danger"
+															ng-click="excluir(contato)"
+															data-toggle="tooltip"
+															title="excluir">
+															<i class="ace-icon fa fa-trash-o bigger-120"></i>
+														</a>
+													</div>
+													<div class="hidden-md hidden-lg">
+														<div class="inline position-relative">
+															<button class="btn btn-minier btn-primary dropdown-toggle"
+																data-toggle="dropdown" 
+																data-position="auto">
+																<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+															</button>
+															<ul class="dropdown-menu dropdown-only-icon dropdown-yellow 
+																		dropdown-menu-right dropdown-caret dropdown-close">
+																<li>
+																	<a class="tooltip-success" 
+																		data-rel="tooltip"
+																		ng-click="direcionamento('editar', contato)"
+																		data-toggle="tooltip"
+																		title="editar"> 
+																		<span class="blue"> 
+																			<i class="ace-icon fa fa-pencil bigger-120"></i>
+																		</span>
+																	</a>
+																</li>
+																<li>
+																	<a class="tooltip-error" 
+																		data-rel="tooltip"
+																		ng-click="excluir(contato)"
+																		data-toggle="tooltip"
+																		title="excluir">
+																		<span class="red"> 
+																			<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																		</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td align="left" 
+													data-title="'Nome'"
+													sortable="'nmContato'">{{contato.nmContato}}</td>
+												<td align="left" 
+													data-title="'Email'"
+													sortable="'email'">{{contato.email}}</td>
+												<td align="left" 
+													data-title="'Telefone'"
+													sortable="'telefone'">{{contato.telefone}}</td>
+												<td align="left" 
+													data-title="'Cargo'"
+													sortable="'cargo'">{{contato.cargo == 1 ? 'Comprador' : contato.cargo == 2 ? 'Vendedor' : contato.cargo == 3 ? 'Auxiliar Administrativo' : contato.cargo == 4 ? 'Gerente' : contato.cargo == 5 ? 'Diretor' : ''}}</td>
+												<td align="left" 
+													data-title="'Departamento'"
+													sortable="'departamento'">{{contato.departamento == 1 ? 'Comercial' : contato.departamento == 2 ? 'Financeiro' : contato.departamento == 3 ? 'Servi&ccedil;os' :
+													 contato.departamento == 4 ? 'Ind&uacute;stria' : contato.departamento == 5 ? 'Almoxarifado' : contato.departamento == 6 ? 'Recursos Humanos' : 
+														contato.departamento == 7 ? 'Fiscal' : contato.departamento == 8 ? 'Cont&aacute;bil' : ''}}</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+                        
+                    </div>
+
+                </section>
+            </article>
+            <!-- ## page end ## -->
+        </div>
+        <!-- ## primary content end ## -->
+      </div>
+      <!-- ## row end ## -->
+    </div>
+    <!-- ## content container end ## -->
+  </div>
+  <!-- ## content end ## -->
+</div>
+<!-- ## main end ## -->

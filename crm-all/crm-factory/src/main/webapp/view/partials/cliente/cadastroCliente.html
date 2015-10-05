@@ -1,0 +1,136 @@
+<!-- ## main start ## -->
+<div id="main">
+  <!-- ## content start ## -->
+  <div id="content">
+    <!-- ## content container start ## -->
+    <div class="container">
+      <!-- ## row ## -->
+      <div class="row">
+        <!-- ## primary content start ## -->
+        <div class="col-md-8 col-md-offset-2">
+            <!-- ## page start ## -->
+            <article class="page type-page status-publish hentry">
+                <section class="novoCliente">
+                    <div class="content">
+                        <h3 for="login-username">{{acaoForm}} Cliente</h3>
+                        <hr>
+                        <form>
+                            <fieldset>
+                            	<label for="cliente.nmCliente" class="class_cliente_nmCliente">Nome</label>
+                                <input placeholder="Nome" type="text" required="true" maxlength="100"
+                                       name="nmCliente" class="form-control" ng-model="cliente.nmCliente">
+                                
+	                            <div class="row">
+	                                <div class="col-md-6">
+	                                    <label for="cliente.email" ng-class="class_cliente_email">Email</label>
+		                                <input placeholder="Email" type="text" required="true" maxlength="100"
+		                                        name="user_name" class="form-control" ng-model="cliente.email">
+	                                </div>
+	                                <div class="col-md-6">
+	                                    <label for="cliente.confirmarEmail" ng-class="class_cliente_confirmarEmail">Confirmar Email</label>
+		                                <input placeholder="Confirmar Email" type="text" required="true" maxlength="100"
+		                                       name="user_name" class="form-control" ng-model="dadosAux.confirmarEmail">
+	                                </div>
+	                            </div>
+                            	   
+	                            <div class="row">
+	                                <div class="col-md-6">
+	                                    <label for="cliente.telefone" style="color:class_cliente_telefone;">Telefone</label>
+		                                <input placeholder="Telefone" type="text" required="true" maxlength="13"
+		                                       name="telefone" class="form-control onlyNumber" ng-model="cliente.telefone">
+	                                </div>
+	                                <div class="col-md-6">
+	                                    <label for="cliente.cpfCnpj" ng-class="class_cliente_cpfCnpj">CPF/CNPJ</label>
+		                                <input placeholder="CPF/CNPJ" type="text" maxlength="18"
+		                                       name="cpfCnpj" class="form-control onlyNumber" ng-model="cliente.cpfCnpj">
+	                                </div>
+	                            </div>
+	                            
+                                <hr>
+                                
+	                            <div class="row">
+	                                <div class="col-md-9">
+	                                    <label for="cliente.cidade" ng-class="class_cliente_cidade">Cidade</label>
+		                                <input placeholder="Cidade" type="text" maxlength="100"
+		                                       name="cidade" class="form-control" ng-model="cliente.cidade">
+	                                </div>
+	                                <div class="col-md-3">
+	                                    <label for="cliente.estado" ng-class="class_cliente_estado">Estado</label>
+		                                <input placeholder="Estado" type="text" maxlength="2" 
+		                                       name="estado" class="form-control" ng-model="cliente.estado">
+	                                </div>
+	                            </div>
+	                            <div class="row">
+	                                <div class="col-md-9">
+	                                    <label for="cliente.logradouro" ng-class="class_cliente_logradouro">Logradouro</label>
+		                                <input placeholder="Logradouro" type="text" maxlength="100"
+		                                       name="logradouro" class="form-control" ng-model="cliente.logradouro">
+	                                </div>
+	                                <div class="col-md-3">
+	                                    <label for="cliente.nrEndereco" ng-class="class_cliente_nrEndereco">N&uacute;mero do Endere&ccedil;o</label>
+		                                <input placeholder="N&uacute;mero do Endereco" type="text" maxlength="6" 
+		                                       name="nrEndereco" class="form-control onlyNumber" ng-model="cliente.nrEndereco">
+	                                </div>
+	                            </div>
+	                                 
+                                <hr>
+                                
+	                            <div class="row">
+	                                <div class="col-md-6">
+	                                    <label for="cliente.tpCliente" ng-class="class_cliente_tpCliente">Tipo de Cliente</label>
+		                                <select name="tpCliente" class="form-control" ng-model="cliente.tpCliente">
+		                                        <option value="">Selecione...</option>
+		                                        <option value="1">F&iacute;sica</option>
+		                                        <option value="2">Jur&iacute;dica</option>
+		                                </select>
+	                                </div>
+	                                <div class="col-md-6">
+	                                    <label for="cliente.porte" ng-class="class_cliente_porte">Porte do Cliente</label>
+		                                <select name="porte" class="form-control" ng-model="cliente.porte">
+		                                        <option value="">Selecione...</option>
+		                                        <option value="1">Micro</option>
+		                                        <option value="2">Pequeno</option>
+		                                        <option value="3">M&eacute;dio</option>
+		                                        <option value="4">Grande</option>
+		                                </select>
+	                                </div>
+	                            </div>
+	                            
+                            	<label for="cliente.limiteCredito" ng-class="class_cliente_limiteCredito">Limite de Cr&eacute;dito</label>
+                                <input placeholder="Limite de Cr&eacute;dito" type="text" maxlength="6"
+                                       name="limiteCredito" class="form-control onlyNumber" ng-model="cliente.limiteCredito">
+                                
+                            </fieldset>
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="submit" ng-click="salvarNovoCliente()"
+                                            class="btn btn-success btn-sm btn-block">Salvar</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary btn-sm btn-block"
+                                        ng-click="voltar()">Retornar</button>
+                                </div>
+                                <div class="col-md-4" ng-show="acaoForm == 'Editar'">
+                                    <button class="btn btn-info btn-sm btn-block"
+                                        ng-click="contatos()">Contatos</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+
+                </section>
+            </article>
+            <!-- ## page end ## -->
+        </div>
+        <!-- ## primary content end ## -->
+      </div>
+      <!-- ## row end ## -->
+    </div>
+    <!-- ## content container end ## -->
+  </div>
+  <!-- ## content end ## -->
+</div>
+<!-- ## main end ## -->

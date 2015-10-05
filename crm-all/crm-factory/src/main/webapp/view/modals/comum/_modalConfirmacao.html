@@ -1,0 +1,27 @@
+<div class="modal-header">
+	<h5 ng-bind-html="titulo"></h5>
+</div>
+<form class="form-horizontal" name="form">
+	<div id="msgGerals"></div>
+
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-sm-12">
+				<label ng-bind-html="mensagem"></label>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div class="modal-footer">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="btn-group btn-margin">
+				<button id="botaoConfirma" class="btn-mesmo-tamanho-confirmacao-comum" type="submit" ng-class="botaoConfirmaClass"
+					ng-click="confirma()">{{ botaoConfirma }}</button>
+				<button type="button" ng-click=fechar() style="margin-left:5px"
+					class="btn btn-warning btn-mesmo-tamanho-confirmacao-comum">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>

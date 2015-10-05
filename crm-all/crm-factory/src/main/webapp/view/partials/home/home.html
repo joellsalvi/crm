@@ -1,0 +1,149 @@
+<!-- ## main start ## -->
+<div id="main" ng-controller="HomeCtrl">
+    <!-- ## content start ## -->
+    <div id="content">
+        <!-- ## content container start ## -->
+        <div class="container">
+            <div class="row">
+                <!-- ## page start ## -->
+                <article id="page-115" class="post-115 type-page status-publish hentry">
+                    <!-- ## post-entry start ## -->
+                    <div class="row">
+                        <!-- ## entry-content start ## -->
+                        <div class="col-sm-12 entry-content">
+
+                            <!--<div class="posts col-sm-2 menuHomeContent" ng-include="menuLeftContent"></div>-->
+
+                            <div class="posts col-sm-8">
+                                <div class="post-body">
+                                    <div class="post-title row text-center">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <strong>Escreva um novo Post</strong>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top:10px; margin-bottom:10px">
+                                    <div class="post-comments row">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <textarea rows="4" cols="50" type="text" ng-model="newPost.dsPostagem" maxlength="5000"
+                                                  placeholder="Insira aqui seu comentário" style="resize:none;"
+                                                  class="form-control" name="post_comment" autofocus="true"></textarea>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top:10px; margin-bottom:10px">
+                                    <div class="post-actions row">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <button class="btn btn-primary rigth" ng-click="createNewPost()">Postar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="post-body" ng-repeat="post in wallPosts">
+                                    <div class="post-title row">
+                                        <div class="col-sm-9 col-xs-9">
+                                            <div class="pull-left" style="width: 40px">
+                                                <img ng-src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png" style="width: 30px" />
+                                            </div>
+                                            <div class="pull-left">
+                                                <strong>{{post.usuarioEntity.nome+" "+post.usuarioEntity.sobrenome}}</strong><br />
+                                                <span class="post-time">{{ post.dtPostagem }}</span>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-3 text-right">
+                                            <div class="btn-group btn-grande">
+                                                <a data-toggle="dropdown"
+                                                    class="btn-grande">
+                                                    <i class="glyphicon glyphicon-chevron-down"></i></a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <button type="button" class="btn btn-primary widthMax"
+                                                            ng-disabled="bloqueioRequisicao"
+                                                            ng-click="updatePost(post)">
+                                                            <i class="glyphicon glyphicon-pencil"></i>Alterar</button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="btn btn-danger widthMax"
+                                                            ng-disabled="bloqueioRequisicao"
+                                                            ng-click="removePost(post)">
+                                                            <i class="glyphicon glyphicon-trash"></i>Remover</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top:10px; margin-bottom:10px">
+                                    <div class="post-content row">
+                                        <div class="col-sm-12 col-xs-12">
+                                            {{post.dsPostagem}}
+                                            {{post.ftPostagem}}
+                                            {{post.vdPostagem}}
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top:10px; margin-bottom:10px">
+                                    <div class="post-actions row">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <a href="" ng-click="likePost(post)">
+                                                <i class="glyphicon" ng-class="isLiked == true ? 'glyphicon-heart' : 'glyphicon-heart-empty'"></i><b>Curtir</b>
+                                            </a> - 
+                                            <a href="" ng-click="sharePost(post)">
+                                                <i class="glyphicon glyphicon glyphicon-share"></i> <b>Compartilhar</b>
+                                            </a>
+                                            <i class="glyphicon glyphicon-heart">{{post.likes}}</i>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top:10px; margin-bottom:10px">
+                                    <div class="post-comments row">
+                                        <div class="col-sm-12 col-xs-12" ng-repeat="com in post.comentarioEntity">
+                                            <div class="pull-left" style="width: 40px">
+                                                <img ng-src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png" style="width: 30px" />
+                                            </div>
+                                            <div class="pull-left">
+                                                <strong>{{ com.usuarioEntity.nome+" "+com.usuarioEntity.sobrenome }}</strong><br />
+                                                <span>{{ com.dsComentario }}</span>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="col-sm-9 col-xs-9">
+                                            <input type="text" ng-model="comentarios[$index].dsComentario" maxlength="5000"
+                                                   placeholder="Escreva um comentário" ng-submit="commentPost(post, comentarios[$index])"
+                                                   class="form-control" name="post_comment">
+                                        </div>
+                                        <div class="col-sm-3 col-xs-3 text-right">
+                                            <button class="btn btn-success" ng-click="commentPost(post, comentarios[$index])">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-sm-12 col-xs-12 text-center">
+                                    <button class="btn btn-primary" ng-click="loadMorePosts()">Carregar mais posts</button>
+                                </div>
+                                <br><br>
+                                
+                            </div>
+
+                            <div class="posts col-sm-4 menuHomeContent"><!-- ng-include="menuRightContent" -->
+                                <div class="userPhoto" ng-repeat="amigo in amigos">
+                                    <!--<div ng-click="accessUserProfile(amigo)">{{amigo.nome +' '+ amigo.sobrenome}}</div>-->
+                                    <div class="pull-left" style="width: 40px" ng-click="accessUserProfile(amigo)">
+                                        <img ng-src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png" style="width: 30px" />
+                                        </br>{{amigo.nome +' '+ amigo.sobrenome}}
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- ## entry-content end ## -->
+                    </div>
+                    <!-- ## post-entry end ## -->
+                </article>
+                <!-- ## page end ## -->
+            </div>
+        </div>
+        <!-- ## content container end ## -->
+    </div>
+    <!-- ## content end ## -->
+</div>
+<!-- ## main end ## -->

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="MainApp" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title ng-controller="AppCtrl" ng-bind-html="tituloApp"></title>
+
+    <!--  CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet/less" href="js/lib/Content/app.less" />
+    <link rel="stylesheet/less" href="js/lib/Content/variables.less" />
+    <!--CSS Bootstrap--------------------------------------------------------->
+    <!--Libs ------------------------------------------------------------->
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" type="text/css" media="all" href="js/lib/theme/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="js/lib/theme/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="js/lib/theme/style.css" />
+    <link rel='stylesheet' id='dropmenu-css' href='js/lib/theme/css/dropmenu.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='styles-css' href='js/lib/theme/css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='list-styles-css' href='js/lib/theme/css/fa-list.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='justifiedGallery.min-css' href='js/lib/theme/css/justifiedgallery.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='swipebox-css' href='js/lib/theme/css/swipebox.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='custom-styles-css' href='js/lib/theme/css/custom.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='inafx-likes-css' href='js/lib/theme/css/inafx-likes.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='google-fonts-css' href='js/lib/theme/css/google_map.css' type='text/css' media='all' />
+
+    <!-- Utils -->
+    <link rel="stylesheet" type="text/css" media="application/javascript" href="js/lib/Content/bootstrap/bootstrap.less" />
+    <link rel="stylesheet" href="js/lib/Content/datepicker.css">
+    
+</head>
+
+<body ng-controller="AppCtrl">
+
+	<div>
+  		<dir-head></dir-head>
+	</div>
+
+	<div class="main-container" id="main-container">
+      <div class="main-content">
+          <div class="page-content">
+              <div class="row">
+              	<div id="MsgPadrao" class="text-center"></div>
+
+                  <!-- PAGE CONTENT BEGINS -->
+                  <div class="col-xs-12" ng-view></div>
+                  <!-- PAGE CONTENT ENDS -->
+
+              </div>
+          </div>
+      </div>
+	</div>
+
+    <script src="js/lib/jquery/jquery-1.11.3.js"></script>
+    <!-- Js de ambiente -->
+    <script src="js/config/mensagens.js"></script>
+    <script src="js/config/util.js"></script>
+
+    <!-- AngularJS Interacao -->
+    <script type='text/javascript' src="js/lib/angular/angular-loader.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-route.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-sanitize.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-file-upload-shim.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-file-upload.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular/checklist-model.js"></script>
+    <script type='text/javascript' src="js/lib/angular/ng-table.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-route.js"></script>
+    <script type='text/javascript' src="js/lib/angular/angular-moment.js"></script>
+    <script type='text/javascript' src="js/lib/Content/ui-bootstrap-tpls-0.13.0.js"></script>
+    
+    <!-- Scripts do datepicker -->
+    <script type='text/javascript' src="js/lib/moment.js"></script>
+    <script type="text/javascript" src="js/lib/date-time/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/lib/date-time/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/lib/date-time/locales/bootstrap-datepicker.pt-BR.js" charset="UTF-8"></script>
+
+    <!-- libs js -->
+    <script type='text/javascript' src="js/lib/angular/mask.js"></script>
+    <script type='text/javascript' src="js/lib/angular/tree-grid-directive.js"></script>
+    <script type='text/javascript' src="js/lib/angular/masks.min.js"></script>
+    <script type='text/javascript' src="js/lib/theme/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="js/lib/others/js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+    <!-- Angular Modules -->
+    <script type='text/javascript' src="js/modules/app.js"></script>
+    <script type='text/javascript' src="js/modules/app_config.js"></script>
+    <script type='text/javascript' src="js/modules/app_factory.js"></script>
+
+    <!-- Controllers -->
+    <script type='text/javascript' src="view/partials//main/mainCtrl.js"></script>
+    <script type='text/javascript' src="view/partials/cliente/clienteCtrl.js"></script>
+    <script type='text/javascript' src="view/partials/home/homeCtrl.js"></script>
+    <script type='text/javascript' src="view/partials/contato/contatoCtrl.js"></script>
+    <script type='text/javascript' src="view/modals/comum/modalConfirmacaoCtrl.js"></script>
+    
+    <script src="js/lib/Content/jquery-1.9.1.min.js"></script>
+    <script type='text/javascript' src="js/lib/Content/bootstrap-datepicker.js"></script>
+   
+    <script>
+        // This is needed in order to use the format filter
+        angular.module('ui.filters', []);
+    </script>
+    <script type="text/javascript" src="js/lib/customSelect/customSelect.js"></script>
+    <script type="text/javascript" src="js/lib/customSelect/format.js"></script>
+    <script type="text/javascript" src="js/lib/others/messageResource.js"></script>
+
+</body>
+</html>
